@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
       const cityFounded = this.city.features.find(d => d.text.toLowerCase() == city);
       this.weatherService.getWeather(cityFounded.center[0], cityFounded.center[1]).subscribe(
         (data) => {
-          console.log(data);
+          this.weather = data;
         },
         (error) => {
           new Error(error);
